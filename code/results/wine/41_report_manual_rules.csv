@@ -1,0 +1,4 @@
+﻿class,precision,recall,support
+class_0,1.0,1.0,18
+class_1,1.0,1.0,21
+class_2,1.0,1.0,15

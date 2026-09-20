@@ -1,0 +1,15 @@
+﻿,class_0,class_1,class_2
+alcohol,0.0935,-0.1251,0.0313
+malic_acid,0.0199,-0.0823,0.0625
+ash,0.0745,-0.1273,0.0525
+alcalinity_of_ash,-0.1215,0.1211,0.0007
+magnesium,0.0153,-0.0099,-0.0052
+total_phenols,-0.0271,-0.0301,0.056
+flavanoids,0.1811,0.0757,-0.2553
+nonflavanoid_phenols,0.02,0.0049,-0.0246
+proanthocyanins,-0.0622,0.0699,-0.008
+color_intensity,-0.0139,-0.1268,0.1414
+hue,-0.0142,0.0524,-0.0381
+od280/od315_of_diluted_wines,0.0659,0.0173,-0.0829
+proline,0.1899,-0.1542,-0.0358
+bias,0.3306,0.4032,0.2661

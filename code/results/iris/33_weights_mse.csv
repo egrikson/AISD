@@ -1,0 +1,6 @@
+﻿,setosa,versicolor,virginica
+sepal_length,-0.0056,0.0635,-0.0563
+sepal_width,0.1348,-0.2468,0.1114
+petal_length,-0.2302,0.1356,0.0899
+petal_width,-0.1487,-0.2114,0.3631
+bias,0.3333,0.3333,0.3333

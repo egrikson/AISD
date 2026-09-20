@@ -1,0 +1,12 @@
+﻿параметр,значение
+Название,Wine (классификация сортов вина)
+Источник,sklearn.datasets.load_wine (оригинал: UCI Wine Data Set)
+Число объектов,178
+Число признаков,13
+Число классов,3
+Признаки,"alcohol, malic_acid, ash, alcalinity_of_ash, magnesium, total_phenols, flavanoids, nonflavanoid_phenols, proanthocyanins, color_intensity, hue, od280/od315_of_diluted_wines, proline"
+Классы (метки),"class_0, class_1, class_2"
+Пропусков в признаках,0
+Тип признаков,вещественные (количественные)
+Примечание,"Пропусков нет, классы слегка несбалансированы (59/71/48)."
+Примечание,Признаки имеют разный масштаб (от 0.13 до 1680) -> нужна стандартизация.

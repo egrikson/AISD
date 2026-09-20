@@ -1,0 +1,4 @@
+﻿,предсказан setosa,предсказан versicolor,предсказан virginica
+истинный setosa,15,0,0
+истинный versicolor,0,14,1
+истинный virginica,0,1,14

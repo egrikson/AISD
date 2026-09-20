@@ -1,0 +1,4 @@
+﻿rule,predicted_class,covered,correct,rule_precision
+ЕСЛИ flipper_length_mm > 205 AND culmen_depth_mm < 17 ТО Gentoo,Gentoo,116,116,1.0
+ЕСЛИ culmen_length_mm < 43 ТО Adelie,Adelie,147,143,0.9728
+ИНАЧЕ (правило по умолчанию) ТО Chinstrap,Chinstrap,79,64,0.8101

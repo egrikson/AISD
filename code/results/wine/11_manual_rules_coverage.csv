@@ -1,0 +1,4 @@
+﻿rule,predicted_class,covered,correct,rule_precision
+ЕСЛИ flavanoids > 2 AND proline > 755 ТО class_0,class_0,60,57,0.95
+ЕСЛИ flavanoids < 1.6 AND color_intensity > 3.8 ТО class_2,class_2,50,48,0.96
+ИНАЧЕ (правило по умолчанию) ТО class_1,class_1,68,66,0.9706

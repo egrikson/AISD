@@ -1,0 +1,10 @@
+# Зависимости лабораторных работ по курсу «Алгоритмы и структуры данных».
+# Установка:  python -m pip install -r requirements.txt
+
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+scikit-learn>=1.3
+
+# Нужен только для сборки отчёта в .docx (report/build_report.py)
+python-docx>=1.1

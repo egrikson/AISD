@@ -1,0 +1,5 @@
+﻿,sepal_length,sepal_width,petal_length,petal_width
+sepal_length,1.0,-0.109,0.872,0.818
+sepal_width,-0.109,1.0,-0.421,-0.357
+petal_length,0.872,-0.421,1.0,0.963
+petal_width,0.818,-0.357,0.963,1.0

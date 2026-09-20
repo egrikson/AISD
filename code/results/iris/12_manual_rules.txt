@@ -1,0 +1,3 @@
+1. ЕСЛИ petal_length < 2.45 ТО setosa   # setosa линейно отделима по длине лепестка
+2. ЕСЛИ petal_width < 1.75 AND petal_length < 4.95 ТО versicolor   # узкий и короткий лепесток
+3. ИНАЧЕ ТО virginica

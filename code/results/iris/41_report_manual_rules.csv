@@ -1,0 +1,4 @@
+﻿class,precision,recall,support
+setosa,1.0,1.0,15
+versicolor,0.9333,0.9333,15
+virginica,0.9333,0.9333,15

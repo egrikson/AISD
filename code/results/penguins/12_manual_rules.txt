@@ -1,0 +1,3 @@
+1. ЕСЛИ flipper_length_mm > 205 AND culmen_depth_mm < 17 ТО Gentoo   # длинные ласты и неглубокий клюв
+2. ЕСЛИ culmen_length_mm < 43 ТО Adelie   # короткий клюв
+3. ИНАЧЕ ТО Chinstrap

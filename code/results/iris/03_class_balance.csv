@@ -1,0 +1,4 @@
+﻿class,count,share_%,imbalance_ratio_max_min
+setosa,50,33.33,1.0
+versicolor,50,33.33,1.0
+virginica,50,33.33,1.0

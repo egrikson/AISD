@@ -1,0 +1,5 @@
+﻿feature,importance
+flipper_length_mm,0.5335
+culmen_length_mm,0.3513
+culmen_depth_mm,0.0979
+body_mass_g,0.0173

@@ -1,0 +1,34 @@
+|--- flipper_length_mm <= 206.50
+|   |--- culmen_length_mm <= 43.35
+|   |   |--- culmen_length_mm <= 42.30
+|   |   |   |--- culmen_depth_mm <= 16.65
+|   |   |   |   |--- culmen_length_mm <= 39.50
+|   |   |   |   |   |--- class: Adelie
+|   |   |   |   |--- culmen_length_mm >  39.50
+|   |   |   |   |   |--- class: Chinstrap
+|   |   |   |--- culmen_depth_mm >  16.65
+|   |   |   |   |--- class: Adelie
+|   |   |--- culmen_length_mm >  42.30
+|   |   |   |--- flipper_length_mm <= 189.50
+|   |   |   |   |--- class: Chinstrap
+|   |   |   |--- flipper_length_mm >  189.50
+|   |   |   |   |--- class: Adelie
+|   |--- culmen_length_mm >  43.35
+|   |   |--- body_mass_g <= 4175.00
+|   |   |   |--- class: Chinstrap
+|   |   |--- body_mass_g >  4175.00
+|   |   |   |--- culmen_length_mm <= 48.80
+|   |   |   |   |--- culmen_depth_mm <= 17.05
+|   |   |   |   |   |--- class: Gentoo
+|   |   |   |   |--- culmen_depth_mm >  17.05
+|   |   |   |   |   |--- class: Adelie
+|   |   |   |--- culmen_length_mm >  48.80
+|   |   |   |   |--- class: Chinstrap
+|--- flipper_length_mm >  206.50
+|   |--- culmen_depth_mm <= 17.50
+|   |   |--- class: Gentoo
+|   |--- culmen_depth_mm >  17.50
+|   |   |--- culmen_depth_mm <= 18.95
+|   |   |   |--- class: Adelie
+|   |   |--- culmen_depth_mm >  18.95
+|   |   |   |--- class: Chinstrap

@@ -1,0 +1,4 @@
+﻿class,culmen_length_mm,culmen_depth_mm,flipper_length_mm,body_mass_g
+Adelie,38.791,18.346,189.954,3700.662
+Chinstrap,48.834,18.421,195.824,3733.088
+Gentoo,47.505,14.982,217.187,5076.016

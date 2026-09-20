@@ -1,0 +1,4 @@
+﻿class,precision,recall,support
+Adelie,0.9783,1.0,45
+Chinstrap,1.0,0.9524,21
+Gentoo,1.0,1.0,37

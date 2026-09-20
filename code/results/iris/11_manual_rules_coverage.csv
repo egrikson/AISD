@@ -1,0 +1,4 @@
+﻿rule,predicted_class,covered,correct,rule_precision
+ЕСЛИ petal_length < 2.45 ТО setosa,setosa,50,50,1.0
+ЕСЛИ petal_width < 1.75 AND petal_length < 4.95 ТО versicolor,versicolor,48,47,0.9792
+ИНАЧЕ (правило по умолчанию) ТО virginica,virginica,52,49,0.9423

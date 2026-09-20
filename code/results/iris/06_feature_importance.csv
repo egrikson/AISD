@@ -1,0 +1,5 @@
+﻿feature,eta_squared,abs_corr_with_label,min,mean,max
+petal_length,0.9413,0.949,1.0,3.759,6.9
+petal_width,0.9288,0.9565,0.1,1.199,2.5
+sepal_length,0.6187,0.7826,4.3,5.843,7.9
+sepal_width,0.3919,0.4194,2.0,3.054,4.4

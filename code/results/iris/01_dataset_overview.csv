@@ -1,0 +1,11 @@
+﻿параметр,значение
+Название,Iris (ирисы Фишера)
+Источник,https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv
+Число объектов,150
+Число признаков,4
+Число классов,3
+Признаки,"sepal_length, sepal_width, petal_length, petal_width"
+Классы (метки),"setosa, versicolor, virginica"
+Пропусков в признаках,0
+Тип признаков,вещественные (количественные)
+Примечание,"Пропусков нет, датасет идеально сбалансирован (50/50/50)."
