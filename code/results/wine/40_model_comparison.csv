@@ -1,5 +1,0 @@
-﻿model,params,test_accuracy,test_precision_macro,test_recall_macro,test_f1_macro,fit_time_ms,peak_memory_kb,precision_class_0,precision_class_1,precision_class_2
-Ручные правила,3 правил,1.0,1.0,1.0,1.0,0.0,12.88,1.0,1.0,1.0
-Дерево решений (глубина 3),"max_depth=3, листьев=7",0.963,0.971,0.9593,0.9651,2.58,26.52,1.0,0.913,1.0
-Линейная регрессия (MSE),"lr=0.1, iterations=100",0.9815,0.9825,0.9841,0.9833,70.953,124.57,0.9474,1.0,1.0
-Softmax-регрессия (log-loss),"lr=0.5, iterations=100",0.9815,0.9792,0.9841,0.9816,80.353,136.07,1.0,1.0,0.9375

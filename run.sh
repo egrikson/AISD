@@ -47,10 +47,10 @@ python -m pip install --quiet --upgrade pip
 python -m pip install --quiet -r requirements.txt
 
 echo "[3/4] Выполняю лабораторную работу (Iris, Wine, Penguins) ..."
-python code/main.py --dataset all
+python lab1/code/main.py --dataset all
 
 echo "[4/4] Собираю отчёт ..."
-python report/build_report.py
+python lab1/report/build_report.py
 
 echo
-echo "Готово. Таблицы: code/results, графики: report/images, отчёт: report/Отчет_ЛР1.docx"
+echo "Готово. Таблицы: lab1/code/results, графики: lab1/report/images, отчёт: lab1/report/Отчет_ЛР1.docx"

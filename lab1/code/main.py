@@ -9,8 +9,8 @@
     python main.py --dataset all        # все три датасета
 
 Результаты:
-    code/results/<датасет>/   -- таблицы CSV и текстовые отчёты
-    report/images/<датасет>/  -- графики PNG для отчёта
+    lab1/code/results/<датасет>/   -- таблицы CSV и текстовые отчёты
+    lab1/report/images/<датасет>/  -- графики PNG для отчёта
 """
 
 from __future__ import annotations

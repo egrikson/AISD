@@ -40,7 +40,7 @@ if errorlevel 1 (
 )
 
 echo [3/4] Running the lab (Iris, Wine, Penguins) ...
-python "code\main.py" --dataset all
+python "lab1\code\main.py" --dataset all
 if errorlevel 1 (
     echo The lab script failed.
     pause
@@ -48,8 +48,8 @@ if errorlevel 1 (
 )
 
 echo [4/4] Building the report ...
-python "report\build_report.py"
+python "lab1\report\build_report.py"
 
 echo.
-echo Done. Tables: code\results  Figures: report\images  Report: the .docx file in report\
+echo Done. Tables: lab1\code\results  Figures: lab1\report\images  Report: the .docx file in lab1\report\
 pause

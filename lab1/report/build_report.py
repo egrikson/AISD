@@ -1,16 +1,16 @@
 """Сборка отчёта по лабораторной работе №1.
 
-Скрипт читает таблицы из ``code/results`` и графики из ``report/images``,
+Скрипт читает таблицы из ``lab1/code/results`` и графики из ``lab1/report/images``,
 подставляет в текст отчёта актуальные числа и сохраняет два файла:
 
-    report/Отчет_ЛР1.md     -- версия для просмотра на GitHub
-    report/Отчет_ЛР1.docx   -- версия для сдачи на virtual.ulstu.ru
+    lab1/report/Отчет_ЛР1.md     -- версия для просмотра на GitHub
+    lab1/report/Отчет_ЛР1.docx   -- версия для сдачи на virtual.ulstu.ru
 
 Фрагменты исходного кода в разделе «Сжатый исходный код» берутся прямо из
 модулей через ``inspect.getsource``, поэтому отчёт не может разойтись с кодом.
 
 Запуск:
-    python report/build_report.py
+    python lab1/report/build_report.py
 """
 
 from __future__ import annotations
@@ -265,29 +265,30 @@ def section_source_code() -> str:
     parts = [
         "## 3. Сжатый исходный код",
         "",
-        "Полный код находится в каталоге `code/`. Ниже приведены ключевые фрагменты, "
+        "Полный код находится в каталоге `lab1/code/`. Ниже приведены ключевые фрагменты, "
         "вставленные в отчёт напрямую из модулей проекта.",
         "",
         "### 3.1. Структура проекта",
         "",
         "```text",
         "AISD/",
-        "├── code/",
-        "│   ├── main.py                 # точка входа, разбор аргументов командной строки",
-        "│   ├── data/                   # локальные копии датасетов (работа без интернета)",
-        "│   ├── results/                # CSV-таблицы и текстовые отчёты (результат прогона)",
-        "│   ├── src/",
-        "│   │   ├── datasets.py         # Dataset, DatasetLoader",
-        "│   │   ├── analysis.py         # DatasetAnalyzer: разведочный анализ",
-        "│   │   ├── rules.py            # Condition, Rule, RuleBasedClassifier, RuleLibrary",
-        "│   │   ├── linear_model.py     # StandardScaler, GradientDescentClassifier",
-        "│   │   ├── tree_model.py       # DecisionTreeExperiment",
-        "│   │   ├── metrics.py          # ClassificationMetrics",
-        "│   │   ├── plots.py            # PlotBuilder",
-        "│   │   ├── benchmark.py        # Benchmark, BenchmarkTable",
-        "│   │   └── pipeline.py         # Lab1Pipeline: сценарий работы целиком",
-        "│   └── tests/test_lab1.py      # 36 модульных тестов",
-        "├── report/                     # этот отчёт, графики и скрипт его сборки",
+        "├── lab1/",
+        "│   ├── code/",
+        "│   │   ├── main.py             # точка входа, разбор аргументов командной строки",
+        "│   │   ├── data/               # локальные копии датасетов (работа без интернета)",
+        "│   │   ├── results/            # CSV-таблицы и текстовые отчёты (результат прогона)",
+        "│   │   ├── src/",
+        "│   │   │   ├── datasets.py     # Dataset, DatasetLoader",
+        "│   │   │   ├── analysis.py     # DatasetAnalyzer: разведочный анализ",
+        "│   │   │   ├── rules.py        # Condition, Rule, RuleBasedClassifier, RuleLibrary",
+        "│   │   │   ├── linear_model.py # StandardScaler, GradientDescentClassifier",
+        "│   │   │   ├── tree_model.py   # DecisionTreeExperiment",
+        "│   │   │   ├── metrics.py      # ClassificationMetrics",
+        "│   │   │   ├── plots.py        # PlotBuilder",
+        "│   │   │   ├── benchmark.py    # Benchmark, BenchmarkTable",
+        "│   │   │   └── pipeline.py     # Lab1Pipeline: сценарий работы целиком",
+        "│   │   └── tests/test_lab1.py  # 36 модульных тестов",
+        "│   └── report/                 # этот отчёт, графики и скрипт его сборки",
         "├── requirements.txt",
         "└── run.bat, run.sh             # запуск всей работы одной командой",
         "```",
@@ -394,7 +395,7 @@ def section_dataset(dataset: str, number: int, title: str, extra: str = "") -> s
         "",
         f"Точность набора правил: **{full_acc:.4f}** на всех {n_samples} объектах и "
         f"**{test_acc:.4f}** на тестовой выборке. Прогноз сохранён в файл "
-        f"`code/results/{dataset}/10_predictions_manual_rules.csv` "
+        f"`lab1/code/results/{dataset}/10_predictions_manual_rules.csv` "
         "(строка = объект, столбцы = признаки, истинный класс, предсказанный класс, признак совпадения).",
         "",
         f"### {number}.3. Дерево решений",
@@ -532,7 +533,7 @@ def section_testing() -> str:
         "Время измерено монотонным таймером `time.perf_counter`, пиковое потребление "
         "памяти — стандартным модулем `tracemalloc` (учитываются только выделения Python). "
         "Замеры выполнены на процессоре x86-64 под Windows 11, Python 3.14, "
-        "и сохраняются при каждом запуске в `code/results/<датасет>/50_benchmark.csv`.",
+        "и сохраняются при каждом запуске в `lab1/code/results/<датасет>/50_benchmark.csv`.",
         "",
     ]
     for dataset, title in DATASETS.items():
@@ -571,7 +572,8 @@ def section_testing() -> str:
         "### 7.5. Модульные тесты",
         "",
         "Работоспособность проверена на различных наборах входных данных автоматическими "
-        "тестами (`code/tests/test_lab1.py`, 36 тестов, `python -m unittest discover -s tests`):",
+        "тестами (`lab1/code/tests/test_lab1.py`, 36 тестов, "
+        "`python -m unittest discover -s tests` из каталога `lab1/code`):",
         "",
         "* три реальных датасета (Iris, Wine, Penguins) и синтетический набор из трёх "
         "гауссовых облаков;",

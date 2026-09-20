@@ -6,20 +6,21 @@
 
 ```text
 AISD/
-├── code/                     # исходный код
-│   ├── main.py               # точка входа
-│   ├── data/                 # локальные копии датасетов (работает без интернета)
-│   ├── src/                  # модули: загрузка данных, модели, метрики, графики
-│   ├── tests/                # модульные тесты (36 штук)
-│   └── results/              # CSV-таблицы и текстовые отчёты (результат прогона)
-├── report/                   # отчёт
-│   ├── Отчет_ЛР1.docx        # готовый отчёт для сдачи
-│   ├── Отчет_ЛР1.md          # тот же отчёт для просмотра на GitHub
-│   ├── images/               # графики, вставленные в отчёт
-│   ├── build_report.py       # сборка отчёта из результатов прогона
-│   └── docx_writer.py        # конвертер Markdown → .docx
+├── lab1/                       # лабораторная работа №1
+│   ├── code/                   # исходный код
+│   │   ├── main.py             # точка входа
+│   │   ├── data/               # локальные копии датасетов (работает без интернета)
+│   │   ├── src/                # модули: загрузка данных, модели, метрики, графики
+│   │   ├── tests/              # модульные тесты (36 штук)
+│   │   └── results/            # CSV-таблицы и текстовые отчёты (результат прогона)
+│   └── report/                 # отчёт
+│       ├── Отчет_ЛР1.docx      # готовый отчёт для сдачи
+│       ├── Отчет_ЛР1.md        # тот же отчёт для просмотра на GitHub
+│       ├── images/             # графики, вставленные в отчёт
+│       ├── build_report.py     # сборка отчёта из результатов прогона
+│       └── docx_writer.py      # конвертер Markdown → .docx
 ├── requirements.txt
-├── run.bat / run.sh          # запуск «в один клик»
+├── run.bat / run.sh            # запуск «в один клик»
 └── README.md
 ```
 
@@ -49,10 +50,10 @@ bash run.sh
 
 ```bash
 python -m pip install -r requirements.txt
-python code/main.py --dataset iris
+python lab1/code/main.py --dataset iris
 ```
 
-Параметры `code/main.py`:
+Параметры `lab1/code/main.py`:
 
 | Параметр | Значение по умолчанию | Описание |
 |---|---|---|
@@ -60,19 +61,19 @@ python code/main.py --dataset iris
 | `--test-size` | `0.3` | доля тестовой выборки |
 | `--random-state` | `42` | зерно генератора случайных чисел |
 | `--max-iterations` | `100` | максимум итераций обучения линейных моделей |
-| `--results-dir` | `code/results` | куда сохранять CSV |
-| `--figures-dir` | `report/images` | куда сохранять графики |
+| `--results-dir` | `lab1/code/results` | куда сохранять CSV |
+| `--figures-dir` | `lab1/report/images` | куда сохранять графики |
 
 Пересборка отчёта после прогона:
 
 ```bash
-python report/build_report.py
+python lab1/report/build_report.py
 ```
 
 ## Тесты
 
 ```bash
-python -m unittest discover -s code/tests -t code
+python -m unittest discover -s lab1/code/tests -t lab1/code
 ```
 
 ## Лабораторная работа №1
@@ -92,10 +93,10 @@ python -m unittest discover -s code/tests -t code
    сравнение моделей;
 6. замеры времени и памяти каждого этапа.
 
-Отчёт: [report/Отчет_ЛР1.md](report/Отчет_ЛР1.md)
+Отчёт: [lab1/report/Отчет_ЛР1.md](lab1/report/Отчет_ЛР1.md)
 
 ## Требования
 
 Python 3.10 или новее. Библиотеки перечислены в `requirements.txt`.
-Датасеты Iris и Palmer Penguins лежат в `code/data/`, Wine загружается из
+Датасеты Iris и Palmer Penguins лежат в `lab1/code/data/`, Wine загружается из
 `scikit-learn`, поэтому интернет для запуска не нужен.
