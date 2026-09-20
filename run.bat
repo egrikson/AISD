@@ -1,17 +1,28 @@
 @echo off
-rem Запуск лабораторной работы №1 одним файлом (Windows).
-rem Создаёт виртуальное окружение, ставит зависимости, считает и собирает отчёт.
+rem Lab 1 launcher for Windows.
+rem Creates a virtual environment, installs dependencies, runs the lab and builds the report.
+rem NOTE: this file is intentionally ASCII-only -- cmd.exe mis-parses batch files
+rem that mix "chcp 65001" with non-ASCII characters.
 chcp 65001 >nul
 setlocal
 cd /d "%~dp0"
 set PYTHONUTF8=1
 
+set PY=py -3
+%PY% -c "import sys" >nul 2>&1
+if errorlevel 1 set PY=python
+%PY% -c "import sys" >nul 2>&1
+if errorlevel 1 (
+    echo Python 3.10+ not found. Install it from python.org and run again.
+    pause
+    exit /b 1
+)
+
 if not exist ".venv" (
-    echo [1/4] Создаю виртуальное окружение .venv ...
-    py -3 -m venv .venv
-    if errorlevel 1 python -m venv .venv
+    echo [1/4] Creating virtual environment .venv ...
+    %PY% -m venv .venv
     if errorlevel 1 (
-        echo Не удалось создать виртуальное окружение. Установите Python 3.10+ и повторите.
+        echo Failed to create the virtual environment.
         pause
         exit /b 1
     )
@@ -19,26 +30,26 @@ if not exist ".venv" (
 
 call ".venv\Scripts\activate.bat"
 
-echo [2/4] Устанавливаю зависимости ...
+echo [2/4] Installing dependencies ...
 python -m pip install --quiet --upgrade pip
 python -m pip install --quiet -r requirements.txt
 if errorlevel 1 (
-    echo Не удалось установить зависимости. Проверьте подключение к интернету.
+    echo Failed to install dependencies. Check your internet connection.
     pause
     exit /b 1
 )
 
-echo [3/4] Выполняю лабораторную работу (Iris, Wine, Penguins) ...
+echo [3/4] Running the lab (Iris, Wine, Penguins) ...
 python "code\main.py" --dataset all
 if errorlevel 1 (
-    echo Ошибка при выполнении лабораторной работы.
+    echo The lab script failed.
     pause
     exit /b 1
 )
 
-echo [4/4] Собираю отчёт ...
+echo [4/4] Building the report ...
 python "report\build_report.py"
 
 echo.
-echo Готово. Таблицы: code\results, графики: report\images, отчёт: report\Отчет_ЛР1.docx
+echo Done. Tables: code\results  Figures: report\images  Report: the .docx file in report\
 pause

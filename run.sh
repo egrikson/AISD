@@ -1,14 +1,37 @@
 #!/usr/bin/env bash
 # Запуск лабораторной работы №1 одним файлом (Linux / macOS / Git Bash).
+# Создаёт виртуальное окружение, ставит зависимости, считает и собирает отчёт.
 set -euo pipefail
 cd "$(dirname "$0")"
 export PYTHONUTF8=1
 
-PY=${PYTHON:-python3}
+# Ищем рабочий интерпретатор: в Git Bash под Windows "python3" часто оказывается
+# заглушкой Microsoft Store, поэтому проверяем, что команда реально запускается.
+detect_python() {
+    for candidate in "${PYTHON:-}" python3 python; do
+        [ -z "$candidate" ] && continue
+        if command -v "$candidate" >/dev/null 2>&1 \
+            && "$candidate" -c "import sys; sys.exit(0)" >/dev/null 2>&1; then
+            echo "$candidate"
+            return 0
+        fi
+    done
+    if command -v py >/dev/null 2>&1 && py -3 -c "import sys; sys.exit(0)" >/dev/null 2>&1; then
+        echo "py -3"
+        return 0
+    fi
+    return 1
+}
+
+if ! PY=$(detect_python); then
+    echo "Не найден Python 3. Установите Python 3.10+ и повторите запуск." >&2
+    exit 1
+fi
 
 if [ ! -d .venv ]; then
-    echo "[1/4] Создаю виртуальное окружение .venv ..."
-    "$PY" -m venv .venv
+    echo "[1/4] Создаю виртуальное окружение .venv (интерпретатор: $PY) ..."
+    # shellcheck disable=SC2086
+    $PY -m venv .venv
 fi
 
 if [ -f .venv/bin/activate ]; then
