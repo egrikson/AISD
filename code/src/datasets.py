@@ -22,6 +22,13 @@ import pandas as pd
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
 
+def _plural_rows(count: int) -> str:
+    """Согласование слова «строка» с числительным: 1 строка, 2 строки, 5 строк."""
+    if 11 <= count % 100 <= 14:
+        return "строк"
+    return {1: "строка", 2: "строки", 3: "строки", 4: "строки"}.get(count % 10, "строк")
+
+
 @dataclass
 class Dataset:
     """Абстрактный тип данных «набор размеченных объектов».
@@ -172,7 +179,8 @@ class DatasetLoader:
             target_names=targets,
             source=self.URLS["penguins"],
             notes=[
-                f"Обнаружены пропуски: удалено {n_dropped} строк из {n_before}.",
+                f"Обнаружены пропуски: удалено {n_dropped} {_plural_rows(n_dropped)} "
+                f"из {n_before}.",
                 "Классы несбалансированы (~146/68/119).",
             ],
         )
